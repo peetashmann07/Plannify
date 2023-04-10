@@ -1,0 +1,52 @@
+{
+    "students": [
+      {
+        "name": "Aviraj Arora",
+        "username": "student123",
+        "password": "student",
+        "type":"student",
+        "weekly_test_marks": [ {
+          "science": "8,9,8,8",
+          "maths": "8,5,8,3",
+          "social_science": "2,9,4,8",
+          "english": "8,9,1,4"}
+        ]
+
+      },
+      {
+        "name": "Shyam Arora",
+        "username": "parent123",
+        "password": "parent",
+        "type":"parent",
+        "child":"Aviraj Arora",
+        "attendance_monthly":"21",
+        "attendance_yearly":"67",
+        "transport":"22,12,30,18,29",
+        "average_t":"22,11,23,15,28",
+        "monthly_p":"82,78,91,56,96",
+        "hw":"30",
+        "yearly":"451,422,209,464,490",
+        "target":"45,48,42,50,44",
+        "achievied":"34,39,46,32,50",
+        "weekly_test_marks": [ {
+          "science": "1,2,9,3,8,4,1,7,5",
+          "maths": "1,6,2,8,5,4,9",
+          "social_science": "2,5,9,7,4,4,3,7",
+          "english": "8,3,9,4,1,5,6,4,8"}
+        ]
+      },
+      {
+        "name": "Mrs. Gunjan",
+        "username": "teacher123",
+        "password": "teacher",
+        "type":"teacher",
+        "weekly_test_marks": [ {
+          "science": "8,9,8,0",
+          "maths": "8,5,8,9",
+          "social_science": "2,9,4,9",
+          "english": "8,9,1,9"}
+        ]
+      }
+    ]
+  }
+  

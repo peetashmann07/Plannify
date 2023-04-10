@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../static/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/libs/css/style.css">
+    <link rel="stylesheet" href="../static/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../static/vendor/vector-map/jqvmap.css">
+    <link href="../static/vendor/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="../static/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="../static/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" type="text/css" href="../static/vendor/daterangepicker/daterangepicker.css" />
+    <title>Parent Dashboard</title>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">plannify&nbsp;</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../static/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+                                <a class="dropdown-item" href="/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
+                                <div id="submenu-9" class="collapse submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/maps">School Location</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h3 class="mb-2" id="greet">Parent Dashboard&nbsp</h3>
+                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Parent Dashboard&nbsp;</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="offset-xl-10 col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Science</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">{{ session['week_science_final'][-1] }}/10</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light p-t-40 p-b-40">
+                                    <div id="sparkline-revenue"></div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Maths</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">{{ session['week_maths_final'][-1] }}/10</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
+                                    </div>
+                                </div>
+                                <div class="card-body text-center bg-light p-t-40 p-b-40">
+                                    <div id="sparkline-revenue2"></div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Social Sc.</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">{{ session['week_sst_final'][-1] }}/10</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                    
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light p-t-40 p-b-40">
+                                    <div id="sparkline-revenue3"></div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">English</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">{{ session['week_english_final'][-1] }}/10</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                      
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light p-b-40 p-t-40">
+                                    <div id="sparkline-revenue4"></div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end revenue year  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- ap and ar balance  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Class Average Attendance
+                                </h5>
+                                <div class="card-body">
+                                    <canvas id="chartjs_balance_bar"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end ap and ar balance  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- gross profit  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Monthly Attendance</h5>
+                                <div class="card-body">
+                                    <div id="morris_gross" style="height: 272px;"></div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <p>Present <span class="float-right text-dark">{{ session['am']/3 }}</span></p>
+                                    <p>Absent<span class="float-right text-dark">{{ 31 - session['am']/3 }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end gross profit  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- profit margin  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Total Attendance</h5>
+                                <div class="card-body">
+                                    <div id="morris_profit" style="height: 272px;"></div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <p>Present <span class="float-right text-dark">{{ session['ay'] }}</span></p>
+                                    <p>Absent<span class="float-right text-dark">{{ 100 - session['ay'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end profit margin -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- earnings before interest tax  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Month-on-Month Performance</h5>
+                                <div class="card-body">
+                                    <div id="ebit_morris"></div>
+                                    <div class="text-center">
+                                        <span class="legend-item mr-3">
+                                                <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                        <span class="legend-text">Marks Secured</span>
+                                        </span>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end earnings before interest tax  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- cost of goods  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">School Transport Used</h5>
+                                <div class="card-body">
+                                    <div id="goodservice"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end cost of goods  -->
+                        <!-- ============================================================== -->
+                    </div>
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- overdue invoices  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Pending Homework</h5>
+                                <div class="card-body">
+                                    <div class="ct-chart-invoice ct-golden-section"></div>
+                                    <div class="text-center m-t-40">
+                                        <span class="legend-item mr-3">
+                                                    <span class="fa-xs text-primary mr-1 legend-tile"><i class="fa fa-fw fa-square-full "></i></span><span class="legend-text">Pending Homework</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                                    <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full "></i></span><span class="legend-text">Uploaded Homework</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end overdue invoices  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- disputed invoices  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Subject-Wise-Marks</h5>
+                                <div class="card-body">
+                                    <div class="ct-chart-line-invoice ct-golden-section"></div>
+                                    <div class="text-center m-t-10">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end disputed invoices  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- account payable age  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Weekly Performance</h5>
+                                <div class="card-body">
+                                    <div id="account" style="height: 300px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end account payable age  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- working capital  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Yearly Performance</h5>
+                                <div class="card-body">
+                                    <div id="capital"></div>
+                                    <div class="text-center m-t-10">
+                                        <span class="legend-item mr-3">
+                                                <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                        <span class="legend-text">Performance</span>
+                                        </span>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end working capital  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- inventory turnover  -->
+                        <!-- ============================================================== -->
+
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end inventory turnover -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- jquery 3.3.1  -->
+    <script src="../static/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="../static/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- chart chartist js -->
+    <script src="../static/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <script src="../static/vendor/charts/chartist-bundle/Chartistjs.js"></script>
+    <script src="../static/vendor/charts/chartist-bundle/chartist-plugin-threshold.js"></script>
+    <!-- chart C3 js -->
+    <script src="../static/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="../static/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <!-- chartjs js -->
+    <script src="../static/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+    <script src="../static/vendor/charts/charts-bundle/chartjs.js"></script>
+    <!-- sparkline js -->
+    <script src="../static/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- dashboard finance js -->
+    <script src="../static/libs/js/dashboard-finance.js"></script>
+    <!-- main js -->
+    <script src="../static/libs/js/main-js.js"></script>
+    <!-- gauge js -->
+    <script src="../static/vendor/gauge/gauge.min.js"></script>
+    <!-- morris js -->
+    <script src="../static/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="../static/vendor/charts/morris-bundle/morris.js"></script>
+    <script src="../static/vendor/charts/morris-bundle/morrisjs.html"></script>
+    <!-- daterangepicker js -->
+    <script src="../../../../cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="../../../../cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+    $(function() {
+        $('input[name="daterange"]').daterangepicker({
+            opens: 'left'
+        }, function(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
+    });
+    </script>
+        <script>
+            const d = new Date();
+            let hour = d.getHours();
+            if (hour < 12){
+                document.getElementById('greet').innerHTML = 'Good Morning, {{ session["name"] }}';
+            }    
+            else if (hour < 17) {
+                document.getElementById('greet').innerHTML = 'Good Afternoon, {{ session["name"] }}'
+            }
+            else if (hour > 16){
+                document.getElementById('greet').innerHTML = 'Good Evening, {{ session["name"] }}'
+            }
+                </script>
+    <script>
+        /*
+Template Name: Influence Admin Template
+Author: jitu
+Email: chauhanjitu3@gmail.com
+File: js
+*/
+$(function() {
+    "use strict";
+    
+    // ============================================================== 
+    // Revenue Cards
+    // ============================================================== 
+
+    $("#sparkline-revenue").sparkline({{ session['week_science_final' ]}}, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#5969ff',
+        fillColor: '',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize:true
+    });
+
+
+
+    $("#sparkline-revenue2").sparkline({{ session['week_maths_final']}}, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#ff407b',
+        fillColor: '',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize:true
+    });
+
+
+
+    $("#sparkline-revenue3").sparkline({{session['week_sst_final']}}, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#25d5f2',
+        fillColor: '',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize:true
+    });
+
+
+
+    $("#sparkline-revenue4").sparkline({{ session['week_english_final']}}, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#ffc750',
+        fillColor: '',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize:true,
+    });
+    // ============================================================== 
+    // Chart Balance Bar
+    // ============================================================== 
+    var ctx = document.getElementById("chartjs_balance_bar").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+
+        
+        data: {
+            labels: ["Apr","May","Jun","Jul","Aug"],
+            datasets: [{
+                label: 'Your Attendance',
+                data: [29, 24 , 30, 25,21],
+                backgroundColor: "rgba(89, 105, 255,.8)",
+                borderColor: "rgba(89, 105, 255,1)",
+                borderWidth:2
+
+            }, {
+                label: 'Average Attendance',
+                data: [28,25,21,23,28],
+                backgroundColor: "rgba(255, 64, 123,.8)",
+                borderColor: "rgba(255, 64, 123,1)",
+                borderWidth:2
+
+
+            }]
+
+        },
+        options: {
+            legend: {
+                    display: true,
+
+                    position: 'bottom',
+
+                    labels: {
+                        fontColor: '#71748d',
+                        fontFamily:'Circular Std Book',
+                        fontSize: 14,
+                    }
+            },
+
+                scales: {
+                    xAxes: [{
+                ticks: {
+                    fontSize: 14,
+                     fontFamily:'Circular Std Book',
+                     fontColor: '#71748d',
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    fontSize: 14,
+                     fontFamily:'Circular Std Book',
+                     fontColor: '#71748d',
+                }
+            }]
+                }
+    }
+
+
+
+});
+ 
+    
+    // ============================================================== 
+    // Gross Profit Margin
+    // ============================================================== 
+   Morris.Donut({
+                element: 'morris_gross',
+
+                data: [
+                    { value: "{{ session['am'] }}", label: 'Attendance' },
+                    { value: "{{ session['am_a'] }}", label: 'Absent' }
+                   
+                ],
+             
+                labelColor: '#5969ff',
+
+                colors: [
+                    '#5969ff',
+                    '#a8b0ff'
+                   
+                ],
+
+                formatter: function(x) { return x + "%" },
+                  resize: true
+
+            });
+
+    // ============================================================== 
+    // Net Profit Margin
+    // ============================================================== 
+    Morris.Donut({
+                element: 'morris_profit',
+
+                data: [
+                    { value: "{{ session['ay'] }}", label: 'Attendance' },
+                    { value: "{{ session['ay_a'] }}", label: 'Absent' }
+                   
+                ],
+             
+                labelColor: '#ff407b',
+
+
+                colors: [
+                    '#ff407b',
+                    '#ffd5e1'
+                   
+                ],
+
+                formatter: function(x) { return x + "%" },
+                  resize: true
+
+            });
+
+
+
+
+    // ============================================================== 
+    //EBIT Morris
+    // ============================================================== 
+
+    Morris.Bar({
+        element: 'ebit_morris',
+        data: [
+            { x: 'Apr', y: '{{ session["monthly_p"][0] }}' },
+            { x: 'May', y: '{{ session["monthly_p"][1] }}' },
+            { x: 'Jun', y: '{{ session["monthly_p"][2] }}' },
+            { x: 'Jul', y: '{{ session["monthly_p"][3] }} '},
+            { x: 'Aug', y: '{{ session["monthly_p"][4] }}' }
+        ],
+        xkey: 'x',
+        ykeys: ['y'],
+        labels: ['Y'],
+        barColors: ['#ff407b']
+
+    });
+
+
+
+
+
+    // ============================================================== 
+    //EBIT Morris
+    // ============================================================== 
+    var a = c3.generate({
+        bindto: "#goodservice",
+        size: { height: 350 },
+        color: { pattern: ["#5969ff", "#ff407b"] },
+        data: {
+            columns: [
+                ["Days Used", {{ session['transport'] }}],
+                ["Average Use", {{ session['avg_t   '] }}]
+            ],
+            types: { Service: "bar" }
+        },
+        bar: {
+
+            width: 45
+
+        },
+        legend: {
+  show: true
+}
+
+
+    });
+
+
+
+    // ============================================================== 
+    // Disputed vs Overdue Invoices
+    // ============================================================== 
+    var data = {
+        labels: ['Finished', 'Pending'],
+        series: [{{ session['hw'] }}, {{ session['hw_p'] }}]
+    };
+
+    var options = {
+        labelInterpolationFnc: function(value) {
+            return value[0]
+        }
+    };
+
+    var responsiveOptions = [
+        ['screen and (min-width: 640px)', {
+            chartPadding: 30,
+            labelOffset: 100,
+            labelDirection: 'explode',
+            labelInterpolationFnc: function(value) {
+                return value;
+            }
+        }],
+        ['screen and (min-width: 1024px)', {
+            labelOffset: 80,
+            chartPadding: 20
+        }]
+    ];
+
+    new Chartist.Pie('.ct-chart-invoice', data, options, responsiveOptions);
+
+
+    // ============================================================== 
+    // Disputed vs Overdue Invoices
+    // ============================================================== 
+
+    new Chartist.Line('.ct-chart-line-invoice', {
+        labels: ['Apr','May','Jun','Jul','Aug'],
+        series: [
+            [1,8,6,7,1],
+            [3,9,1,7,9],
+            [1,9,2,7,6],
+            [1,7,2,9,3]
+
+        ]
+    }, {
+        fullWidth: true,
+        chartPadding: {
+            right: 40
+        },
+        axisY: {
+            labelInterpolationFnc: function(value) {
+                return ''+ (value*10);
+            }
+        },
+
+
+    });
+
+
+
+    // ============================================================== 
+    // Accounts Payable Age
+    // ============================================================== 
+
+    var chart = c3.generate({
+        bindto: "#account",
+        color: { pattern: ["#5969ff", "#ff407b", "#25d5f2", "#ffc750"] },
+        data: {
+            // iris data from R
+            columns: [
+                ['Maths', {{ session['week_maths_final'][-1]*5 }}],
+                ['Science', {{ session['week_science_final'][-1]*5 }}],
+                ['Social Sc.', {{ session['week_sst_final'][-1]*5 }}],
+                 ['English', {{ session['week_english_final'][-1]*5 }}],
+
+            ],
+            type: 'pie',
+            
+        }
+    });
+
+    setTimeout(function() {
+        chart.load({
+            
+        });
+    }, 1500);
+
+    setTimeout(function() {
+        chart.unload({
+            ids: 'data1'
+        });
+        chart.unload({
+            ids: 'data2'
+        });
+    }, 
+    2500
+    );
+
+    // ============================================================== 
+    // Working Capital
+    // ============================================================== 
+
+    // // Use Morris.Area instead of Morris.Line
+    Morris.Area({
+        element: 'capital',
+        behaveLikeLine: true,
+
+
+
+        data: [
+            { x: '2018', y: {{ session['yearly'][0] }}},
+            { x: '2019', y: {{ session['yearly'][1] }}},
+            { x: '2020', y: {{ session['yearly'][2] }} },
+            { x: '2021', y: {{ session['yearly'][3] }} },
+            { x: '2022', y: {{ session['yearly'][4] }} }
+        ],
+        xkey: 'x',
+        ykeys: ['y'],
+        labels: ['Y'],
+        lineColors: ['#ff407b']
+
+
+
+    });
+   
+    // ============================================================== 
+    // Working Capital
+    // ============================================================== 
+    new Chartist.Bar('.ct-chart-inventory', {
+        labels: ['Apr', 'May', 'Jun', 'Jul'],
+        series: [
+            [67,32,98,16],
+            [90,91,99,88]
+        ]
+    }, {
+        stackBars: true,
+        axisY: {
+            labelInterpolationFnc: function(value) {
+                return value;
+            }
+        }
+    }).on('draw', function(data) {
+        if (data.type === 'bar') {
+            data.element.attr({
+                style: 'stroke-width: 30px'
+            });
+        }
+    });
+
+
+
+
+});
+    </script>
+</body>
+</html>

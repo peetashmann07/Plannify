@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../static/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/css/style.css">
+    <link rel="stylesheet" href="../static/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../static/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="../static/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="../static/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../static/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="../static/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>Plannify Weekly Dashboard</title>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">plannify&nbsp;</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../static/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">{{ session['name'] }}</h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+                                <a class="dropdown-item" href="/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title" id="greet">Heyy, {{ name }}&nbsp;&nbsp; </h2>
+                                <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">STUDENT DASHBOARD</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">WEEKLY TESTS&nbsp;&nbsp;</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="ecommerce-widget">
+
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Science</h5>
+                                        <div class="metric-value d-inline-block">
+                                          <h1 class="mb-1">{{ session['week_science_final'][-1] }}/10&nbsp;</h1>
+                                        </div>
+                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                            <span>&nbsp;</span>
+                                        </div>
+                                    </div>
+                                    <div id="sparkline-revenue"></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Mathematics</h5>
+                                        <div class="metric-value d-inline-block">
+                                          <h1 class="mb-1">{{ session['week_maths_final'][-1] }}/10&nbsp;</h1>
+                                        </div>
+                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                            <span></span><span>&nbsp;</span>
+                                        </div>
+                                    </div>
+                                    <div id="sparkline-revenue2"></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Social Sc.</h5>
+                                        <div class="metric-value d-inline-block">
+                                          <h1 class="mb-1">{{ session['week_sst_final'][-1] }}/10</h1>
+                                        </div>
+                                        <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
+                                            
+                                        </div>
+                                    </div>
+                                    <div id="sparkline-revenue3"></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">English</h5>
+                                        <div class="metric-value d-inline-block">
+                                          <h1 class="mb-1">{{ session['week_english_final'][-1] }}/10</h1>
+                                        </div>
+                                        <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
+                                            
+                                        </div>
+                                    </div>
+                                    <div id="sparkline-revenue4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- ============================================================== -->
+                      
+                            <!-- ============================================================== -->
+
+                                          <!-- recent orders  -->
+                            <!-- ============================================================== -->
+                        
+                            <!-- ============================================================== -->
+                            <!-- end recent orders  -->
+
+    
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- customer acquistion  -->
+                            <!-- ============================================================== -->
+                          
+                       
+                            <!-- ============================================================== -->
+                            <!-- end customer acquistion  -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <div class="row">
+                            <!-- ============================================================== -->
+              				                        <!-- product category  -->
+                            <!-- ============================================================== -->
+                           
+                            <!-- ============================================================== -->
+                            <!-- end product category  -->
+                                   <!-- product sales  -->
+                            <!-- ============================================================== -->
+                            
+                            <!-- ============================================================== -->
+                            <!-- end product sales  -->
+                            <!-- ============================================================== -->
+                            
+                                <!-- ============================================================== -->
+                                <!-- top perfomimg  -->
+                                <!-- ============================================================== -->
+                            
+                                <!-- ============================================================== -->
+                                <!-- end top perfomimg  -->
+                                <!-- ============================================================== -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- ============================================================== -->
+                            <!-- sales  -->
+                            <!-- ============================================================== -->
+                            
+                            <!-- ============================================================== -->
+                            <!-- end sales  -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- new customer  -->
+                            <!-- ============================================================== -->
+                           
+                            <!-- ============================================================== -->
+                            <!-- end new customer  -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- visitor  -->
+                            <!-- ============================================================== -->
+                      
+                            <!-- ============================================================== -->
+                            <!-- end visitor  -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- total orders  -->
+                            <!-- ============================================================== -->
+                           
+                            
+                            <!-- ============================================================== -->
+                            <!-- end total orders  -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <div class="row">
+                            <!-- ============================================================== -->
+                            <!-- total revenue  -->
+                            <!-- ============================================================== -->
+  
+                            
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- category revenue  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Overall&nbsp; Performance</h5>
+                                    <div class="card-body">
+                                      <div id="c3chart_category" style="height: 420px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end category revenue  -->
+                            <!-- ============================================================== -->
+
+                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                  <h5 class="card-header"> Weekly Overall Report</h5>
+
+                                      <div id="morris_totalrevenue"></div>
+                              </div>
+                                    <div class="card-footer">
+                                        <p class="display-7 font-weight-bold"><span class="text-primary d-inline-block">{{ session['week_full'] }}/40</span></p>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <!-- ============================================================== -->
+                                <!-- social source  -->
+                                <!-- ============================================================== -->
+                                
+                                 
+                                <!-- ============================================================== -->
+                                <!-- end social source  -->
+                           
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            
+                  
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script>
+    const d = new Date();
+    let hour = d.getHours();
+    if (hour < 12){
+        document.getElementById('greet').innerHTML = 'Good Morning, {{ name }}';
+    }    
+    else if (hour < 17) {
+        document.getElementById('greet').innerHTML = 'Good Afternoon, {{ name }}'
+    }
+    else if (hour > 16){
+        document.getElementById('greet').innerHTML = 'Good Evening, {{ name }}'
+    }
+        </script>
+    <script src="../static/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="../static/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="../static/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="../static/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="../static/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <script src="../static/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="../static/vendor/charts/morris-bundle/morris.js"></script>
+    <!-- chart c3 js -->
+    <script src="../static/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="../static/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="../static/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script>
+
+         
+    
+    $(function() {
+        "use strict";
+        // ============================================================== 
+        // Product Sales
+        // ============================================================== 
+
+        new Chartist.Bar('.ct-chart-product', {
+            labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+            series: [
+                [800000, 1200000, 1400000, 1300000],
+                [200000, 400000, 500000, 300000],
+                [100000, 200000, 400000, 600000]
+            ]
+        }, {
+            stackBars: true,
+            axisY: {
+                labelInterpolationFnc: function(value) {
+                    return (value / 1000) + 'k';
+                }
+            }
+        }).on('draw', function(data) {
+            if (data.type === 'bar') {
+                data.element.attr({
+                    style: 'stroke-width: 40px'
+                });
+            }
+        });
+    });
+
+
+
+
+    // ============================================================== 
+    // Product Category
+    // ============================================================== 
+    var chart = new Chartist.Pie('.ct-chart-category', {
+        series: [60, 30, 30],
+        labels: ['Bananas', 'Apples', 'Grapes']
+    }, {
+        donut: true,
+        showLabel: false,
+        donutWidth: 40
+
+    });
+
+
+    chart.on('draw', function(data) {
+        if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 1000,
+                    from: -pathLength + 'px',
+                    to: '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze'
+                }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px'
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+        }
+    });
+
+    // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+    
+
+
+    // ============================================================== 
+    // Customer acquisition
+    // ============================================================== 
+    var chart = new Chartist.Line('.ct-chart', {
+        labels: ['Mon', 'Tue', 'Wed'],
+        series: [
+            [1, 5, 2, 5],
+            [2, 3, 4, 8]
+
+        ]
+    }, {
+        low: 0,
+        showArea: true,
+        showPoint: false,
+        fullWidth: true
+    });
+
+    chart.on('draw', function(data) {
+        if (data.type === 'line' || data.type === 'area') {
+            data.element.animate({
+                d: {
+                    begin: 2000 * data.index,
+                    dur: 2000,
+                    from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                    to: data.path.clone().stringify(),
+                    easing: Chartist.Svg.Easing.easeOutQuint
+                }
+            });
+        }
+    });
+
+
+
+
+    // ============================================================== 
+    // Revenue Cards
+    // ============================================================== 
+    const sci = {{ session['week_science_final'] }};
+    const maths = {{ session['week_maths_final'] }};
+    const english  = {{ session['week_english_final'] }};
+    const sst = {{ session['week_sst_final'] }};
+
+    $("#sparkline-revenue").sparkline(sci, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#5969ff',
+        fillColor: '#dbdeff',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize: true
+    });
+
+
+
+    $("#sparkline-revenue2").sparkline(maths, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#ff407b',
+        fillColor: '#ffdbe6',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize: true
+    });
+
+
+
+    $("#sparkline-revenue3").sparkline(sst, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#25d5f2',
+        fillColor: '#dffaff',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize: true
+    });
+
+
+
+    $("#sparkline-revenue4").sparkline(english, {
+        type: 'line',
+        width: '99.5%',
+        height: '100',
+        lineColor: '#fec957',
+        fillColor: '#fff2d5',
+        lineWidth: 2,
+        spotColor: undefined,
+        minSpotColor: undefined,
+        maxSpotColor: undefined,
+        highlightSpotColor: undefined,
+        highlightLineColor: undefined,
+        resize: true,
+    });
+
+
+
+
+
+    // ============================================================== 
+    // Total Revenue
+    // ============================================================== 
+ 
+
+
+
+    // ============================================================== 
+    // Revenue By Categories
+    // ============================================================== 
+
+    var chart = c3.generate({
+        bindto: "#c3chart_category",
+        data: {
+            columns: [
+                ['Social Sc.', {{ session['week_sst_final'][-1] }}],
+                ['Science', {{ session['week_science_final'][-1] }}],
+                ['Maths', {{ session['week_maths_final'][-1] }}],
+                ['English', {{ session['week_english_final'][-1] }}],
+
+            ],
+            type: 'donut',
+
+            onclick: function(d, i) { console.log("onclick", d, i); },
+            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function(d, i) { console.log("onmouseout", d, i); },
+
+            colors: {
+                Men: '#5969ff',
+                Women: '#ff407b',
+                Accessories: '#25d5f2',
+                Children: '#ffc750',
+                Apperal: '#2ec551',
+
+
+
+            }
+        },
+        donut: {
+            label: {
+                show: false
+            }
+        },
+
+
+
+    });
+
+
+    </script>
+
+</body>
+ 
+</html>

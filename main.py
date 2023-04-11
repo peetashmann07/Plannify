@@ -164,31 +164,6 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/upload', methods=['POST', 'GET'])
-def upload():
-    if request.method == 'POST':
-        session['subject'] = request.form.get('subject')
-        session['teacher_name'] = request.form.get('name')
-        session['date'] = request.form.get('date')
-        session['id'] = request.form.get('id')
-        session['pages'] = request.form.get('pages')
-        session['questions'] = request.form.get('questions')
-        print(session['subject'])
-        session['week_dict'] = {
-            session['subject']: {
-                "name":session['teacher_name'],
-                "date":session['date'],
-                "id":session['id'],
-                "pages":session['pages'],
-                "questions":session['questions']
-            }
-        }
-
-        s = open('weekly.json', "w")
-        json.dump(session['week_dict'], s, indent=6)
-        s.close()
-    return render_template('form-validation.html')
-
 @app.route('/maps')
 def maps():
     return render_template('map-google.html')
